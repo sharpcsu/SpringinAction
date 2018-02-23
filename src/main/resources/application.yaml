@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_in_action?useUnicode=true&characterEncoding=UTF-8
+    driverClassName : com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    test-on-borrow: true
+    validation-query: select 1
+
+  mvc:
+   view:
+     prefix: /WEB-INF/pages/ # 请求的前缀
+     suffix: # 请求的后缀
+
+  http:
+    multipart:
+      max-file-size: 9Mb
+      max-request-size: 20Mb
+
+server:
+  port: 8080
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /var/log/accesslog/
+mybatis:
+  type-aliases-package: com.csu.jx.domain
+  config-locations: classpath:sqlMapConfig.xml
+  mapper-locations: classpath:com/csu/jx/mapper/*.xml
+

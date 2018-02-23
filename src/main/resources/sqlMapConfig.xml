@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 配置mybatis的环境变量 -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 配置jdbc事务控制, 由mybatis进行管理 -->
+			<transactionManager type="JDBC"/>
+			<!-- 配置数据源, 采用dbcp连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/jiexin?useUnicode=true&amp;characterEncoding=utf8"/>
+				<property name="username" value="root"/>
+				<property name="password" value="123456"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- 加载mapper -->
+	<mappers>
+		<mapper resource="mapper/ContractMapper.xml"/>
+		<mapper resource="mapper/ContractProductMapper.xml"/>
+		<mapper resource="mapper/ExportMapper.xml"/>
+		<mapper resource="mapper/ExportProductMapper.xml"/>
+		<mapper resource="mapper/ExtCproductMapper.xml"/>
+		<mapper resource="mapper/ExtEproductMapper.xml"/>
+		<mapper resource="mapper/FactoryMapper.xml"/>
+		<mapper resource="mapper/FastMenuMapper.xml"/>
+		<mapper resource="mapper/LoginLogMapper.xml"/>
+		<mapper resource="mapper/PackingListMapper.xml"/>
+	</mappers>
+</configuration>
